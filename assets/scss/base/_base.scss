@@ -1,0 +1,76 @@
+/* base：此專案所需要的全站樣式 */
+
+@use './variables';
+
+// 載入字型
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // Box model
+  // border-radius: variables.$border-radius;
+
+  // Debug
+  @if (variables.$isDebug) {
+    outline: 1px dashed blue;
+
+    div,
+    ul,
+    header,
+    footer,
+    section,
+    article {
+      outline-style: solid;
+    }
+  }
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #FBFBFB;
+}
+
+img {
+  // 自動適應視窗大小
+  max-width: 100%;
+  height: auto;
+}
+
+img,
+textarea {
+  // 去除底部多餘空白
+  vertical-align: middle;
+}
+
+// 表單元素
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+// 按鈕
+button,
+input[type=button],
+input[type=submit] {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// 連結
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.7;
+}

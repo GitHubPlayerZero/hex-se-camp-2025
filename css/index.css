@@ -1,0 +1,101 @@
+/* index page style */
+.banner {
+  position: relative;
+  --base-height: 201px;
+  --base-width: 1200px;
+  --proportion: 0.06;
+}
+@media (min-width: 1200px) {
+  .banner {
+    margin-bottom: calc(var(--base-height) + (var(--base-width) - 100dvw) * var(--proportion));
+  }
+}
+@media (min-width: 1305px) {
+  .banner {
+    --base-height: 156px;
+    --base-width: 1305px;
+    --proportion: 0.07;
+  }
+}
+@media (min-width: 1920px) {
+  .banner {
+    --base-height: 205px;
+    --base-width: 1920px;
+    --proportion: 0.08;
+  }
+}
+
+.banner-identity {
+  flex-grow: 1;
+  background-image: url("../assets/images/index/hero-section2.png");
+  background-size: cover;
+  color: #0027D5;
+  height: 356px;
+}
+@media (min-width: 768px) {
+  .banner-identity {
+    background-image: url("../assets/images/index/hero-section2-dt.png");
+    height: auto;
+    align-content: center;
+  }
+}
+
+.banner-identity-name {
+  font-weight: 900;
+  font-size: 52px;
+  margin-bottom: 12px;
+}
+@media (min-width: 768px) {
+  .banner-identity-name {
+    font-size: 56px;
+  }
+}
+@media (min-width: 1200px) {
+  .banner-identity-name {
+    font-size: 80px;
+  }
+}
+@media (min-width: 1920px) {
+  .banner-identity-name {
+    font-size: 120px;
+  }
+}
+
+.banner-identity-title {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.banner-intro {
+  background-color: #fff;
+  font-size: 24px;
+  padding: 40px 24px;
+}
+@media (min-width: 768px) {
+  .banner-intro {
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1200px) {
+  .banner-intro {
+    position: absolute;
+    right: 80px;
+    top: 80.8%;
+    max-width: 56%;
+  }
+}
+@media (min-width: 1920px) {
+  .banner-intro {
+    font-size: 28px;
+    padding: 80px 40px;
+  }
+}
+
+.banner-intro-social {
+  display: flex;
+}
+.banner-intro-social img {
+  display: block;
+}/*# sourceMappingURL=index.css.map */

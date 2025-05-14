@@ -1,0 +1,42 @@
+/* 其它 utility */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+
+// 產出各種 utility，可做成響應式。
+// $breakWord：斷點字樣，預設空字串。
+@mixin genResponsiveUtility($breakWord: '') {
+	// display
+	.d-#{$breakWord}flex {
+		display: flex;
+	}
+	.d-#{$breakWord}block {
+		display: block;
+	}
+	.d-#{$breakWord}inline-block {
+		display: inline-block;
+	}
+	.d-#{$breakWord}none {
+		display: none;
+	}
+  
+  // width
+  .w-#{$breakWord}100 {
+    width: 100%;
+  }
+  .w-#{$breakWord}50 {
+    width: 50%;
+  }
+}
+
+/* 響應式 utility */
+// 手機
+@include genResponsiveUtility;
+// 平板
+@include breakpoints.pad-up {
+  @include genResponsiveUtility(variables.$class-pad);
+}
+// 桌機
+@include breakpoints.desktop-up {
+  @include genResponsiveUtility(variables.$class-dt);
+}

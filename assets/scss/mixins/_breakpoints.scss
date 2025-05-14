@@ -1,0 +1,22 @@
+// 斷點 (手機優先)
+
+// 平板以上：768px ~ 991px
+@mixin pad-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// 桌機以上：1200px 以上 (含)
+@mixin desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// 桌機全屏：1920px 以上 (含)
+@mixin desktop-full-up {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}

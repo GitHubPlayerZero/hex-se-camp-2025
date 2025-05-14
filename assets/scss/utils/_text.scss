@@ -1,0 +1,33 @@
+/* text：有關文字的設定，如字體大小、粗體、斜體... 等 */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+
+$sizes: 16, 20, 24, 28, 32, 52, 120;
+
+// 產出各種字體大小，可做成響應式。
+// $breakWord：斷點字樣，預設空字串。
+@mixin genFontSize($breakWord: '') {
+  @each $s in $sizes {
+    .fs-#{$breakWord}#{$s} {
+      font-size: #{$s}px;
+    }
+  }
+}
+
+/* 響應式字體大小 */
+// 手機
+@include genFontSize;
+// 平板
+@include breakpoints.pad-up {
+  @include genFontSize(variables.$class-pad);
+}
+// 桌機
+@include breakpoints.desktop-up {
+  @include genFontSize(variables.$class-dt);
+}
+
+/* 無響應式的其它設定 */
+.fw-700 {
+  font-weight: 700;
+}

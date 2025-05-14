@@ -1,0 +1,50 @@
+/* grid：格線系統 */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+
+// 產出各裝置斷點相對應的格線設定
+// $colNum：格線欄數量
+// $breakWord：斷點字樣，預設空字串
+@mixin genGrid($colNum, $breakWord: '') {
+  // @debug '$breakWord = #{$breakWord}';	// 使用插值可以在字串中放入變數值，有點像 JS 樣板字面值的概念
+  @for $i from 1 through $colNum {
+    .col-#{$breakWord}#{$i} {
+      width: calc($i / $colNum) * 100%;
+    }
+  }
+}
+
+/* row */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: variables.$gutter-half-negative;
+  margin-right: variables.$gutter-half-negative;
+
+  // .row 預設下一層只能放 .col，且為手機優先
+  > * {
+    // 手機優先因此不壓縮、寬度預設 100%
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    
+    // gutter padding
+    padding-left: variables.$gutter-half;
+    padding-right: variables.$gutter-half;
+  }
+}
+
+/* col */
+// 手機
+@include genGrid(4);
+
+// 平板
+@include breakpoints.pad-up {
+  @include genGrid(12, variables.$class-pad);
+}
+
+// 桌機
+@include breakpoints.desktop-up {
+  @include genGrid(12, variables.$class-dt);
+}

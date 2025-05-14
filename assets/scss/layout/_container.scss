@@ -1,0 +1,27 @@
+/* container：容器 */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+
+.container {
+  // Gutter on outside
+  padding-left: variables.$gutter-half;
+  padding-right: variables.$gutter-half;
+
+  // 水平置中
+  margin-left: auto;
+  margin-right: auto;
+
+  // 手機優先
+  max-width: 375px;
+
+  // 平板
+  @include breakpoints.pad-up {
+    max-width: 720px;
+  }
+
+  // 桌機
+  @include breakpoints.desktop-up {
+    max-width: 1320px;
+  }
+}

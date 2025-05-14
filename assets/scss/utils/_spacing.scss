@@ -1,0 +1,108 @@
+/* spacing：定義各種間距 */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+
+$base: 4px;	// 基本間距
+
+$spacer: (
+	0: 0,
+	1: $base,	// 4px
+	2: 2 * $base,	// 8px
+	3: 3 * $base,	// 12px
+	4: 4 * $base,	// 16px
+	5: 5 * $base,	// 20px
+	6: 6 * $base,	// 24px
+	7: 7 * $base,	// 28px
+	8: 8 * $base,	// 32px
+	9: 9 * $base,	// 36px
+	10: 10 * $base,	// 40px
+	12: 12 * $base,	// 48px
+	16: 16 * $base,	// 64px
+	20: 20 * $base,	// 80px
+);
+
+// 產出各種間距，可做成響應式。
+// $breakWord：斷點字樣，預設空字串。
+@mixin genSpacing($breakWord: '') {
+	@each $key, $value in $spacer {
+		// margin
+		.mt-#{$breakWord}#{$key} {
+			margin-top: $value;
+		}
+		.mr-#{$breakWord}#{$key} {
+			margin-right: $value;
+		}
+		.mb-#{$breakWord}#{$key} {
+			margin-bottom: $value;
+		}
+		.ml-#{$breakWord}#{$key} {
+			margin-left: $value;
+		}
+		.mx-#{$breakWord}#{$key} {
+			margin-left: $value;
+			margin-right: $value;
+		}
+		.my-#{$breakWord}#{$key} {
+			margin-top: $value;
+			margin-bottom: $value;
+		}
+		.m-#{$breakWord}#{$key} {
+			margin: $value;
+		}
+		
+		// padding
+		.pt-#{$breakWord}#{$key} {
+			padding-top: $value;
+		}
+		.pr-#{$breakWord}#{$key} {
+			padding-right: $value;
+		}
+		.pb-#{$breakWord}#{$key} {
+			padding-bottom: $value;
+		}
+		.pl-#{$breakWord}#{$key} {
+			padding-left: $value;
+		}
+		.px-#{$breakWord}#{$key} {
+			padding-left: $value;
+			padding-right: $value;
+		}
+		.py-#{$breakWord}#{$key} {
+			padding-top: $value;
+			padding-bottom: $value;
+		}
+		.p-#{$breakWord}#{$key} {
+			padding: $value;
+		}
+		
+		// gap
+		.col-gap-#{$breakWord}#{$key} {
+			column-gap: $value;
+		}
+		.row-gap-#{$breakWord}#{$key} {
+			row-gap: $value;
+		}
+		.gap-#{$breakWord}#{$key} {
+			gap: $value;
+		}
+	}
+}
+
+/* 響應式間距大小 */
+// 手機
+@include genSpacing;
+// 平板
+@include breakpoints.pad-up {
+	@include genSpacing(variables.$class-pad);
+}
+// 桌機
+@include breakpoints.desktop-up {
+	@include genSpacing(variables.$class-dt);
+}
+
+/* 無響應式的其它設定 */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
