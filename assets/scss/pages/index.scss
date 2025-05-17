@@ -3,35 +3,6 @@
 @use '../base/variables';
 @use '../mixins/breakpoints';
 
-// Banner
-.banner {
-  position: relative;
-  
-  --base-height: 201px;
-  --base-width: 1200px;
-  --proportion: 0.06;
-  
-  @include breakpoints.desktop-up {
-    // margin-bottom: calc(201px + (1200px - 100dvw) * 0.06);
-    margin-bottom: calc(var(--base-height) + (var(--base-width) - 100dvw) * var(--proportion));
-  }
-  
-  // @include breakpoints.desktop-up {
-  @media (min-width: 1305px) {
-    // margin-bottom: calc(156px + (1305px - 100dvw) * 0.07);
-    --base-height: 156px;
-    --base-width: 1305px;
-    --proportion: 0.07;
-  }
-  
-  @include breakpoints.desktop-full-up {
-    // margin-bottom: calc(205px + (1920px - 100dvw) * 0.08);
-    --base-height: 205px;
-    --base-width: 1920px;
-    --proportion: 0.08;
-  }
-}
-
 // 身份
 .banner-identity {
   flex-grow: 1;
@@ -39,7 +10,7 @@
   background-size: cover;
   color: variables.$color-primary;
   height: 356px;
-  
+
   @include breakpoints.pad-up {
     background-image: url("../assets/images/index/hero-section2-dt.png");
     height: auto;
@@ -48,23 +19,37 @@
 }
 
 .banner-identity-name {
+  // TODO 或許可以改用 title .h1
+  --font-min: 52px;
+  --font-max: 58px;
+  --font-proprotion: 13.866dvw;
+
+  // TODO 或許可以改用 title .h1
   font-weight: 900;
-  font-size: 52px;
+  font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
+  
   margin-bottom: 12px;
-  
+
+  // TODO 或許可以改用 title .h1
   @include breakpoints.pad-up {
-    font-size: 56px;
+    --font-min: 48px;
+    --font-max: 80px;
+    --font-proprotion: 6.3dvw;
   }
-  
+
   @include breakpoints.desktop-up {
-    font-size: 80px;
+    --font-max: 120px;
+    --font-proprotion: 5.7dvw;
   }
-  
+
   @include breakpoints.desktop-full-up {
-    font-size: 120px;
+    --font-min: 120px;
+    --font-max: 999px;
+    --font-proprotion: 6.25dvw;
   }
 }
 
+// TODO 或許可以改用 title .h1
 .banner-identity-title {
   font-weight: 700;
   font-size: 28px;
@@ -75,29 +60,37 @@
   background-color: #fff;
   font-size: 24px;
   padding: 40px 24px;
-  
+  margin-top: -160px;
+
   @include breakpoints.pad-up {
-    max-width: 696px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 0;
   }
-  
+
   @include breakpoints.desktop-up {
-    position: absolute;
-    right: 80px;
-    top: 80.8%;
+    position: relative;
     max-width: 56%;
+    margin-left: auto;
+    margin-right: 80px;
+    margin-top: -8.333%;
   }
-  
+
   @include breakpoints.desktop-full-up {
     font-size: 28px;
     padding: 80px 40px;
   }
 }
 
+.banner-intro-container {
+  @include breakpoints.desktop-up {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
 // 社群
 .banner-intro-social {
   display: flex;
+
   img {
     display: block;
   }
