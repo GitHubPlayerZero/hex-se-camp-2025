@@ -8,9 +8,14 @@
 // Components
 @use './components/header';
 @use './components/footer';
+@use './components/title';
+@use './components/button';
+@use './components/card';
 
 // Utils
-@use './utils/text';
-@use './utils/spacing';
 @use './utils/flex';
+@use './utils/spacing';
+@use './utils/color';
+@use './utils/text';
+@use './utils/border';
 @use './utils/utility';

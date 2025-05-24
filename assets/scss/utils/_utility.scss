@@ -7,25 +7,30 @@
 // $breakWord：斷點字樣，預設空字串。
 @mixin genResponsiveUtility($breakWord: '') {
 	// display
-	.d-#{$breakWord}flex {
+	.d#{$breakWord}-flex {
 		display: flex;
 	}
-	.d-#{$breakWord}block {
+	.d#{$breakWord}-block {
 		display: block;
 	}
-	.d-#{$breakWord}inline-block {
+	.d#{$breakWord}-inline-block {
 		display: inline-block;
 	}
-	.d-#{$breakWord}none {
+	.d#{$breakWord}-none {
 		display: none;
 	}
   
   // width
-  .w-#{$breakWord}100 {
+  .w#{$breakWord}-100 {
     width: 100%;
   }
-  .w-#{$breakWord}50 {
+  .w#{$breakWord}-50 {
     width: 50%;
+  }
+  
+  // position
+  .position#{$breakWord}-relative {
+    position: relative;
   }
 }
 
@@ -39,4 +44,9 @@
 // 桌機
 @include breakpoints.desktop-up {
   @include genResponsiveUtility(variables.$class-dt);
+}
+
+/* 無響應式的其它 utility 設定 */
+.object-fit-cover {
+  object-fit: cover;
 }

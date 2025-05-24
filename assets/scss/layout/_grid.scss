@@ -9,7 +9,7 @@
 @mixin genGrid($colNum, $breakWord: '') {
   // @debug '$breakWord = #{$breakWord}';	// 使用插值可以在字串中放入變數值，有點像 JS 樣板字面值的概念
   @for $i from 1 through $colNum {
-    .col-#{$breakWord}#{$i} {
+    .col#{$breakWord}-#{$i} {
       width: calc($i / $colNum) * 100%;
     }
   }

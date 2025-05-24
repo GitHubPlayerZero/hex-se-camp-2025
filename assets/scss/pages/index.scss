@@ -3,7 +3,8 @@
 @use '../base/variables';
 @use '../mixins/breakpoints';
 
-// 身份
+/* Banner */
+// Banner - 身份
 .banner-identity {
   flex-grow: 1;
   background-image: url("../assets/images/index/hero-section2.png");
@@ -18,44 +19,38 @@
   }
 }
 
-.banner-identity-name {
-  // TODO 或許可以改用 title .h1
-  --font-min: 52px;
-  --font-max: 58px;
-  --font-proprotion: 13.866dvw;
+// .banner-identity-name {
+//   // TODO 或許可以改用 title .h1
+//   --font-min: 52px;
+//   --font-max: 58px;
+//   --font-proprotion: 13.866dvw;
 
-  // TODO 或許可以改用 title .h1
-  font-weight: 900;
-  font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
-  
-  margin-bottom: 12px;
+//   // TODO 或許可以改用 title .h1
+//   font-weight: 900;
+//   font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
 
-  // TODO 或許可以改用 title .h1
-  @include breakpoints.pad-up {
-    --font-min: 48px;
-    --font-max: 80px;
-    --font-proprotion: 6.3dvw;
-  }
+//   margin-bottom: 12px;
 
-  @include breakpoints.desktop-up {
-    --font-max: 120px;
-    --font-proprotion: 5.7dvw;
-  }
+//   // TODO 或許可以改用 title .h1
+//   @include breakpoints.pad-up {
+//     --font-min: 48px;
+//     --font-max: 80px;
+//     --font-proprotion: 6.3dvw;
+//   }
 
-  @include breakpoints.desktop-full-up {
-    --font-min: 120px;
-    --font-max: 999px;
-    --font-proprotion: 6.25dvw;
-  }
-}
+//   @include breakpoints.desktop-up {
+//     --font-max: 120px;
+//     --font-proprotion: 5.7dvw;
+//   }
 
-// TODO 或許可以改用 title .h1
-.banner-identity-title {
-  font-weight: 700;
-  font-size: 28px;
-}
+//   @include breakpoints.desktop-full-up {
+//     --font-min: 120px;
+//     --font-max: 999px;
+//     --font-proprotion: 6.25dvw;
+//   }
+// }
 
-// 介紹
+// Banner - 介紹
 .banner-intro {
   background-color: #fff;
   font-size: 24px;
@@ -80,18 +75,189 @@
   }
 }
 
-.banner-intro-container {
-  @include breakpoints.desktop-up {
-    max-width: 100%;
-    padding: 0;
+// Banner - 社群連結
+.banner-social-link:hover {
+  background-color: variables.$color-primary-light;
+  border-radius: 10px;
+}
+
+/* 區塊 */
+.section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  @include breakpoints.pad-up {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
-// 社群
-.banner-intro-social {
-  display: flex;
+/* 裝飾 */
+.decorator {
+  padding: 18.75px 5px;
 
-  img {
+  .decorator-line {
+    width: 30px;
+    height: 2.5px;
+    background-color: variables.$color-primary;
+    border-radius: variables.$border-radius;
+  }
+}
+
+/* 交疊 */
+@include breakpoints.desktop-up {
+  .overlay-right {
+    margin-left: -40px;
+  }
+
+  .overlay-left {
+    margin-right: -40px;
+    z-index: 0;
+  }
+}
+
+/* 聯繫我 */
+.connect-me {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+
+  @include breakpoints.pad-up {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+// 聯繫我 - 圖片
+.connect-me-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 卡片切換按鈕 */
+.btn-arrow {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  &:enabled:hover {
+    box-shadow: 0 0 10px 3px gray;
+    opacity: 1;
+  }
+
+  .btn-arrow-img {
+    width: 100%;
+  }
+}
+
+// 當螢幕寬 desktop-lg 以上時，改變按鈕的呈現
+@include breakpoints.desktop-lg-up {
+  // 隱藏此按鈕區，改用其它按鈕
+  .card-slide-btn-area {
+    display: none;
+  }
+  // 啟用此按鈕區
+  .card-slide-btn-area-lg {
     display: block;
   }
+  
+  // 改變按鈕位置
+  .btn-arrow {
+    --distance: -56px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    &.arrow-lg-left {
+      left: var(--distance);
+    }
+    &.arrow-lg-right {
+      right: var(--distance);
+    }
+  }
+}
+
+/* 職涯諮詢 */
+// 職涯諮詢 - 說明
+.consultation-desc {
+  margin-top: -160px;
+  
+  @include breakpoints.pad-up {
+    margin-top: 0;
+  }
+}
+
+// 職涯諮詢 - 說明段落 1、說明段落 2
+.consultation-desc-1, .consultation-desc-2 {
+  padding: 40px 24px;
+  
+  @include breakpoints.desktop-up {
+    padding: 80px 40px;
+  }
+}
+
+// 職涯諮詢 - 說明段落 1
+.consultation-desc-1 {
+  background-color: white;
+  margin-bottom: 12px;
+  
+  @include breakpoints.desktop-up {
+    margin-bottom: -40px;
+    position: relative;
+    left: -195px;
+  }
+}
+
+// 職涯諮詢 - 說明段落 2
+.consultation-desc-2 {
+  background-color: variables.$color-dark-950;
+  
+  @include breakpoints.desktop-up {
+    position: relative;
+  }
+}
+
+/* 訂閱電子報 */
+// 訂閱電子報 - 背景區
+.newsletter {
+  background-image: url("../assets/images/index/hero-section2.png");
+  background-size: cover;
+  align-content: center;
+  flex-grow: 1;
+  
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  @include breakpoints.pad-up {
+    padding: 24px 80px;
+  }
+  
+  @include breakpoints.desktop-up {
+    background-image: url("../assets/images/index/hero-section3-dt.jpg");
+    background-position: center;
+  }
+}
+
+// 訂閱電子報 - 內容
+.newsletter-content {
+  background-color: white;
+  padding: 40px 24px;
+  
+  @include breakpoints.desktop-full-up {
+    padding: 80px;
+  }
+}
+
+// 訂閱電子報 - 文字輸入框
+.newsletter-input {
+  width: 100%;
+  background: variables.$color-dark-940;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
 }

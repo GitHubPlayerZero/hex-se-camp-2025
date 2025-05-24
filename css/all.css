@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* base：此專案所需要的全站樣式 */
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -86,14 +87,14 @@ textarea {
   font-size: inherit;
 }
 
-button,
-input[type=button],
-input[type=submit] {
+button:enabled,
+input[type=button]:enabled,
+input[type=submit]:enabled {
   cursor: pointer;
 }
-button:hover,
-input[type=button]:hover,
-input[type=submit]:hover {
+button:enabled:hover,
+input[type=button]:enabled:hover,
+input[type=submit]:enabled:hover {
   opacity: 0.7;
 }
 
@@ -106,7 +107,7 @@ a:hover {
   opacity: 0.7;
 }
 
-/* container：容器 */
+/* container：容器相關 */
 .container {
   padding-left: 12px;
   padding-right: 12px;
@@ -125,6 +126,42 @@ a:hover {
   }
 }
 
+@media (min-width: 768px) {
+  .container-pad {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) and (min-width: 1200px) {
+  .container-pad {
+    max-width: 1320px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-dt {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1320px;
+  }
+}
+/* 響應式清除 container 樣式 */
+@media (min-width: 768px) {
+  .container-pad-clear {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .container-dt-clear {
+    max-width: 100%;
+    padding: 0;
+  }
+}
 /* grid：格線系統 */
 /* row */
 .row {
@@ -252,6 +289,7 @@ a:hover {
 
 /* footer */
 .footer {
+  background-color: #fff;
   text-align: center;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -311,85 +349,254 @@ a:hover {
   font-size: 24px;
 }
 
-/* text：有關文字的設定，如字體大小、粗體、斜體... 等 */
-/* 響應式字體大小 */
-.fs-16 {
-  font-size: 16px;
+/* button：按鈕樣式 */
+.btn {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 40px;
+  color: #4B4B4B;
+  background-color: transparent;
+  padding: 8px 16px;
+}
+.btn:hover {
+  color: white;
+  background-color: #4B4B4B;
+  opacity: 1;
+}
+.btn.btn-primary {
+  border-color: #0027D5;
+  color: #0027D5;
+  font-weight: 700;
+  background-color: white;
+}
+.btn.btn-primary:hover {
+  color: white;
+  background-color: #0027D5;
 }
 
-.fs-20 {
-  font-size: 20px;
+/* card：卡片元件 */
+/* webkit-clamp：以 webkit 方式實作內容省略效果 */
+/* 部落格卡片 */
+.blog-card-img {
+  width: 100%;
+  margin-bottom: 16px;
 }
 
-.fs-24 {
+.blog-card-date {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.blog-card-tags {
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+.blog-card-tags .hashtag {
+  color: #0027D5;
   font-size: 24px;
 }
-
-.fs-28 {
-  font-size: 28px;
+.blog-card-tags .hashtag .hashtag-link {
+  display: inline-block;
+  height: 100%;
+}
+.blog-card-tags .tag-primary {
+  background-color: #0027D5;
+  color: white;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 40px;
 }
 
-.fs-32 {
-  font-size: 32px;
+.blog-card-title {
+  margin-bottom: 8px;
 }
 
-.fs-52 {
-  font-size: 52px;
+.blog-card-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 16px;
 }
 
-.fs-120 {
-  font-size: 120px;
+/* flex 相關設定 */
+/* 響應式 flex 效果 */
+.direction-row {
+  flex-direction: row;
+}
+
+.direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+.direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-end {
+  align-self: flex-end;
 }
 
 @media (min-width: 768px) {
-  .fs-pad-16 {
-    font-size: 16px;
+  .direction-pad-row {
+    flex-direction: row;
   }
-  .fs-pad-20 {
-    font-size: 20px;
+  .direction-pad-row-reverse {
+    flex-direction: row-reverse;
   }
-  .fs-pad-24 {
-    font-size: 24px;
+  .direction-pad-column {
+    flex-direction: column;
   }
-  .fs-pad-28 {
-    font-size: 28px;
+  .direction-pad-column-reverse {
+    flex-direction: column-reverse;
   }
-  .fs-pad-32 {
-    font-size: 32px;
+  .justify-content-pad-start {
+    justify-content: flex-start;
   }
-  .fs-pad-52 {
-    font-size: 52px;
+  .justify-content-pad-center {
+    justify-content: center;
   }
-  .fs-pad-120 {
-    font-size: 120px;
+  .justify-content-pad-end {
+    justify-content: flex-end;
+  }
+  .justify-content-pad-between {
+    justify-content: space-between;
+  }
+  .justify-content-pad-around {
+    justify-content: space-around;
+  }
+  .justify-content-pad-evenly {
+    justify-content: space-evenly;
+  }
+  .align-items-pad-start {
+    align-items: flex-start;
+  }
+  .align-items-pad-center {
+    align-items: center;
+  }
+  .align-items-pad-end {
+    align-items: flex-end;
+  }
+  .align-self-pad-start {
+    align-self: flex-start;
+  }
+  .align-self-pad-center {
+    align-self: center;
+  }
+  .align-self-pad-end {
+    align-self: flex-end;
   }
 }
 @media (min-width: 1200px) {
-  .fs-dt-16 {
-    font-size: 16px;
+  .direction-dt-row {
+    flex-direction: row;
   }
-  .fs-dt-20 {
-    font-size: 20px;
+  .direction-dt-row-reverse {
+    flex-direction: row-reverse;
   }
-  .fs-dt-24 {
-    font-size: 24px;
+  .direction-dt-column {
+    flex-direction: column;
   }
-  .fs-dt-28 {
-    font-size: 28px;
+  .direction-dt-column-reverse {
+    flex-direction: column-reverse;
   }
-  .fs-dt-32 {
-    font-size: 32px;
+  .justify-content-dt-start {
+    justify-content: flex-start;
   }
-  .fs-dt-52 {
-    font-size: 52px;
+  .justify-content-dt-center {
+    justify-content: center;
   }
-  .fs-dt-120 {
-    font-size: 120px;
+  .justify-content-dt-end {
+    justify-content: flex-end;
+  }
+  .justify-content-dt-between {
+    justify-content: space-between;
+  }
+  .justify-content-dt-around {
+    justify-content: space-around;
+  }
+  .justify-content-dt-evenly {
+    justify-content: space-evenly;
+  }
+  .align-items-dt-start {
+    align-items: flex-start;
+  }
+  .align-items-dt-center {
+    align-items: center;
+  }
+  .align-items-dt-end {
+    align-items: flex-end;
+  }
+  .align-self-dt-start {
+    align-self: flex-start;
+  }
+  .align-self-dt-center {
+    align-self: center;
+  }
+  .align-self-dt-end {
+    align-self: flex-end;
   }
 }
-/* 無響應式的其它設定 */
-.fw-700 {
-  font-weight: 700;
+/* 無響應式的其它 flex 設定 */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 /* spacing：定義各種間距 */
@@ -2988,185 +3195,272 @@ a:hover {
     gap: 80px;
   }
 }
-/* 無響應式的其它設定 */
+/* 無響應式的其它間距設定 */
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* flex 相關設定 */
-/* 響應式 flex 效果 */
-.flex-direction-row {
-  flex-direction: row;
+/* color：顏色 */
+.bg-primary {
+  background-color: #0027D5;
 }
 
-.flex-direction-row-reverse {
-  flex-direction: row-reverse;
+.color-primary {
+  color: #0027D5;
 }
 
-.flex-direction-column {
-  flex-direction: column;
+.bg-primary-light {
+  background-color: #B2BEF2;
 }
 
-.flex-direction-column-reverse {
-  flex-direction: column-reverse;
+.color-primary-light {
+  color: #B2BEF2;
 }
 
-.justify-content-start {
-  justify-content: flex-start;
+.bg-secondary {
+  background-color: #6C757D;
 }
 
-.justify-content-center {
-  justify-content: center;
+.color-secondary {
+  color: #6C757D;
 }
 
-.justify-content-end {
-  justify-content: flex-end;
+.bg-text {
+  background-color: #4B4B4B;
 }
 
-.justify-content-between {
-  justify-content: space-between;
+.color-text {
+  color: #4B4B4B;
 }
 
-.justify-content-around {
-  justify-content: space-around;
+.bg-dark-925 {
+  background-color: #EDEDED;
 }
 
-.justify-content-evenly {
-  justify-content: space-evenly;
+.color-dark-925 {
+  color: #EDEDED;
 }
 
-.align-items-start {
-  align-items: flex-start;
+.bg-dark-950 {
+  background-color: #F5F5F5;
 }
 
-.align-items-center {
-  align-items: center;
+.color-dark-950 {
+  color: #F5F5F5;
 }
 
-.align-items-end {
-  align-items: flex-end;
+.bg-white {
+  background-color: white;
 }
 
-.align-self-start {
-  align-self: flex-start;
+.color-white {
+  color: white;
 }
 
-.align-self-center {
-  align-self: center;
+/* text：有關文字的設定，如字體大小、粗體、斜體... 等 */
+/* 響應式字體大小 */
+.fs-16 {
+  font-size: 16px;
 }
 
-.align-self-end {
-  align-self: flex-end;
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.fs-52 {
+  font-size: 52px;
 }
 
 @media (min-width: 768px) {
-  .flex-direction-pad-row {
-    flex-direction: row;
+  .fs-pad-16 {
+    font-size: 16px;
   }
-  .flex-direction-pad-row-reverse {
-    flex-direction: row-reverse;
+  .fs-pad-20 {
+    font-size: 20px;
   }
-  .flex-direction-pad-column {
-    flex-direction: column;
+  .fs-pad-24 {
+    font-size: 24px;
   }
-  .flex-direction-pad-column-reverse {
-    flex-direction: column-reverse;
+  .fs-pad-28 {
+    font-size: 28px;
   }
-  .justify-content-pad-start {
-    justify-content: flex-start;
+  .fs-pad-32 {
+    font-size: 32px;
   }
-  .justify-content-pad-center {
-    justify-content: center;
+  .fs-pad-40 {
+    font-size: 40px;
   }
-  .justify-content-pad-end {
-    justify-content: flex-end;
-  }
-  .justify-content-pad-between {
-    justify-content: space-between;
-  }
-  .justify-content-pad-around {
-    justify-content: space-around;
-  }
-  .justify-content-pad-evenly {
-    justify-content: space-evenly;
-  }
-  .align-items-pad-start {
-    align-items: flex-start;
-  }
-  .align-items-pad-center {
-    align-items: center;
-  }
-  .align-items-pad-end {
-    align-items: flex-end;
-  }
-  .align-self-pad-start {
-    align-self: flex-start;
-  }
-  .align-self-pad-center {
-    align-self: center;
-  }
-  .align-self-pad-end {
-    align-self: flex-end;
+  .fs-pad-52 {
+    font-size: 52px;
   }
 }
 @media (min-width: 1200px) {
-  .flex-direction-dt-row {
-    flex-direction: row;
+  .fs-dt-16 {
+    font-size: 16px;
   }
-  .flex-direction-dt-row-reverse {
-    flex-direction: row-reverse;
+  .fs-dt-20 {
+    font-size: 20px;
   }
-  .flex-direction-dt-column {
-    flex-direction: column;
+  .fs-dt-24 {
+    font-size: 24px;
   }
-  .flex-direction-dt-column-reverse {
-    flex-direction: column-reverse;
+  .fs-dt-28 {
+    font-size: 28px;
   }
-  .justify-content-dt-start {
-    justify-content: flex-start;
+  .fs-dt-32 {
+    font-size: 32px;
   }
-  .justify-content-dt-center {
-    justify-content: center;
+  .fs-dt-40 {
+    font-size: 40px;
   }
-  .justify-content-dt-end {
-    justify-content: flex-end;
-  }
-  .justify-content-dt-between {
-    justify-content: space-between;
-  }
-  .justify-content-dt-around {
-    justify-content: space-around;
-  }
-  .justify-content-dt-evenly {
-    justify-content: space-evenly;
-  }
-  .align-items-dt-start {
-    align-items: flex-start;
-  }
-  .align-items-dt-center {
-    align-items: center;
-  }
-  .align-items-dt-end {
-    align-items: flex-end;
-  }
-  .align-self-dt-start {
-    align-self: flex-start;
-  }
-  .align-self-dt-center {
-    align-self: center;
-  }
-  .align-self-dt-end {
-    align-self: flex-end;
+  .fs-dt-52 {
+    font-size: 52px;
   }
 }
-/* 無響應式的其它設定 */
-.flex-wrap {
-  flex-wrap: wrap;
+/* 無響應式的其它文字設定 */
+.fw-700 {
+  font-weight: 700;
 }
 
-.flex-grow-1 {
-  flex-grow: 1;
+.text-align-right {
+  text-align: right;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+/* border：框線相關的設定 */
+/* 響應式框線樣式 */
+.border {
+  border: 1px solid #6C757D;
+}
+
+.border-top {
+  border-top: 1px solid #6C757D;
+}
+
+.border-right {
+  border-right: 1px solid #6C757D;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #6C757D;
+}
+
+.border-left {
+  border-left: 1px solid #6C757D;
+}
+
+.border-0 {
+  border: 0;
+}
+
+.border-top-0 {
+  border-top: 0;
+}
+
+.border-right-0 {
+  border-right: 0;
+}
+
+.border-bottom-0 {
+  border-bottom: 0;
+}
+
+.border-left-0 {
+  border-left: 0;
+}
+
+@media (min-width: 768px) {
+  .border-pad {
+    border: 1px solid #6C757D;
+  }
+  .border-pad-top {
+    border-top: 1px solid #6C757D;
+  }
+  .border-pad-right {
+    border-right: 1px solid #6C757D;
+  }
+  .border-pad-bottom {
+    border-bottom: 1px solid #6C757D;
+  }
+  .border-pad-left {
+    border-left: 1px solid #6C757D;
+  }
+  .border-pad-0 {
+    border: 0;
+  }
+  .border-pad-top-0 {
+    border-top: 0;
+  }
+  .border-pad-right-0 {
+    border-right: 0;
+  }
+  .border-pad-bottom-0 {
+    border-bottom: 0;
+  }
+  .border-pad-left-0 {
+    border-left: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .border-dt {
+    border: 1px solid #6C757D;
+  }
+  .border-dt-top {
+    border-top: 1px solid #6C757D;
+  }
+  .border-dt-right {
+    border-right: 1px solid #6C757D;
+  }
+  .border-dt-bottom {
+    border-bottom: 1px solid #6C757D;
+  }
+  .border-dt-left {
+    border-left: 1px solid #6C757D;
+  }
+  .border-dt-0 {
+    border: 0;
+  }
+  .border-dt-top-0 {
+    border-top: 0;
+  }
+  .border-dt-right-0 {
+    border-right: 0;
+  }
+  .border-dt-bottom-0 {
+    border-bottom: 0;
+  }
+  .border-dt-left-0 {
+    border-left: 0;
+  }
+}
+/* 無響應式的其它框線樣式 */
+/* 框線顏色 */
+.border-black {
+  border-color: black;
+}
+
+.border-text {
+  border-color: #4B4B4B;
 }
 
 /* 其它 utility */
@@ -3195,6 +3489,10 @@ a:hover {
   width: 50%;
 }
 
+.position-relative {
+  position: relative;
+}
+
 @media (min-width: 768px) {
   .d-pad-flex {
     display: flex;
@@ -3213,6 +3511,9 @@ a:hover {
   }
   .w-pad-50 {
     width: 50%;
+  }
+  .position-pad-relative {
+    position: relative;
   }
 }
 @media (min-width: 1200px) {
@@ -3234,4 +3535,12 @@ a:hover {
   .w-dt-50 {
     width: 50%;
   }
+  .position-dt-relative {
+    position: relative;
+  }
+}
+/* 無響應式的其它 utility 設定 */
+.object-fit-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=all.css.map */

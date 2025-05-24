@@ -4,18 +4,41 @@ $isDebug: false; // Debug 模式
 $gutter: 24px;
 $gutter-half: calc($gutter / 2);
 $gutter-half-negative: $gutter-half * -1;
+$container-width-phone: 375px;
+$container-width-pad: 720px;
+$container-width-dt: 1320px;
 
 // 用於產生 class 的斷點字樣
-$class-pad: 'pad-'; // 平板
-$class-dt: 'dt-'; // 桌機
+$class-pad: '-pad'; // 平板
+$class-dt: '-dt'; // 桌機
 
-// 顏色
+// 色票
 $color-primary: #0027D5; // rgba(0, 39, 213, 1)
 $color-primary-light: #B2BEF2; // rgba(178, 190, 242, 1)
 $color-secondary: #6C757D;  // rgba(108, 117, 125, 1)
 $color-text: #4B4B4B; // rgba(75, 75, 75, 1)
 // 灰階
-$color-dark-100: #EDEDED; // rgba(237, 237, 237, 1)
+$color-dark-925: #EDEDED; // rgba(237, 237, 237, 1)
+$color-dark-940: #F1F1F1; // rgba(241, 241, 241, 1)
+$color-dark-950: #F5F5F5; // rgba(245, 245, 245, 1)
+
+// 定義主題色
+$theme-colors: (
+	// 主色
+	"primary": $color-primary,
+	"primary-light": $color-primary-light,
+	"secondary": $color-secondary,
+  "text": $color-text,
+	
+	// 灰階
+	"dark-925": $color-dark-925,
+	"dark-950": $color-dark-950,
+	
+	// 白
+	"white": white,
+);
 
 // 框線
-$border-radius: 40px;
+$border-color: $color-secondary;  // 顏色
+$border-radius: 40px; // 圓角
+

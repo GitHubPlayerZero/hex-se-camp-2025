@@ -1,4 +1,6 @@
+@charset "UTF-8";
 /* index page style */
+/* Banner */
 .banner-identity {
   flex-grow: 1;
   background-image: url("../assets/images/index/hero-section2.png");
@@ -12,40 +14,6 @@
     height: auto;
     align-content: center;
   }
-}
-
-.banner-identity-name {
-  --font-min: 52px;
-  --font-max: 58px;
-  --font-proprotion: 13.866dvw;
-  font-weight: 900;
-  font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
-  margin-bottom: 12px;
-}
-@media (min-width: 768px) {
-  .banner-identity-name {
-    --font-min: 48px;
-    --font-max: 80px;
-    --font-proprotion: 6.3dvw;
-  }
-}
-@media (min-width: 1200px) {
-  .banner-identity-name {
-    --font-max: 120px;
-    --font-proprotion: 5.7dvw;
-  }
-}
-@media (min-width: 1920px) {
-  .banner-identity-name {
-    --font-min: 120px;
-    --font-max: 999px;
-    --font-proprotion: 6.25dvw;
-  }
-}
-
-.banner-identity-title {
-  font-weight: 700;
-  font-size: 28px;
 }
 
 .banner-intro {
@@ -75,16 +43,176 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .banner-intro-container {
-    max-width: 100%;
-    padding: 0;
+.banner-social-link:hover {
+  background-color: #B2BEF2;
+  border-radius: 10px;
+}
+
+/* 區塊 */
+.section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
-.banner-intro-social {
-  display: flex;
+/* 裝飾 */
+.decorator {
+  padding: 18.75px 5px;
 }
-.banner-intro-social img {
-  display: block;
+.decorator .decorator-line {
+  width: 30px;
+  height: 2.5px;
+  background-color: #0027D5;
+  border-radius: 40px;
+}
+
+/* 交疊 */
+@media (min-width: 1200px) {
+  .overlay-right {
+    margin-left: -40px;
+  }
+  .overlay-left {
+    margin-right: -40px;
+    z-index: 0;
+  }
+}
+/* 聯繫我 */
+.connect-me {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+@media (min-width: 768px) {
+  .connect-me {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.connect-me-img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 卡片切換按鈕 */
+.btn-arrow {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+}
+.btn-arrow:enabled:hover {
+  box-shadow: 0 0 10px 3px gray;
+  opacity: 1;
+}
+.btn-arrow .btn-arrow-img {
+  width: 100%;
+}
+
+@media (min-width: 1500px) {
+  .card-slide-btn-area {
+    display: none;
+  }
+  .card-slide-btn-area-lg {
+    display: block;
+  }
+  .btn-arrow {
+    --distance: -56px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .btn-arrow.arrow-lg-left {
+    left: var(--distance);
+  }
+  .btn-arrow.arrow-lg-right {
+    right: var(--distance);
+  }
+}
+/* 職涯諮詢 */
+.consultation-desc {
+  margin-top: -160px;
+}
+@media (min-width: 768px) {
+  .consultation-desc {
+    margin-top: 0;
+  }
+}
+
+.consultation-desc-1, .consultation-desc-2 {
+  padding: 40px 24px;
+}
+@media (min-width: 1200px) {
+  .consultation-desc-1, .consultation-desc-2 {
+    padding: 80px 40px;
+  }
+}
+
+.consultation-desc-1 {
+  background-color: white;
+  margin-bottom: 12px;
+}
+@media (min-width: 1200px) {
+  .consultation-desc-1 {
+    margin-bottom: -40px;
+    position: relative;
+    left: -195px;
+  }
+}
+
+.consultation-desc-2 {
+  background-color: #F5F5F5;
+}
+@media (min-width: 1200px) {
+  .consultation-desc-2 {
+    position: relative;
+  }
+}
+
+/* 訂閱電子報 */
+.newsletter {
+  background-image: url("../assets/images/index/hero-section2.png");
+  background-size: cover;
+  align-content: center;
+  flex-grow: 1;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+@media (min-width: 768px) {
+  .newsletter {
+    padding: 24px 80px;
+  }
+}
+@media (min-width: 1200px) {
+  .newsletter {
+    background-image: url("../assets/images/index/hero-section3-dt.jpg");
+    background-position: center;
+  }
+}
+
+.newsletter-content {
+  background-color: white;
+  padding: 40px 24px;
+}
+@media (min-width: 1920px) {
+  .newsletter-content {
+    padding: 80px;
+  }
+}
+
+.newsletter-input {
+  width: 100%;
+  background: #F1F1F1;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
 }/*# sourceMappingURL=index.css.map */

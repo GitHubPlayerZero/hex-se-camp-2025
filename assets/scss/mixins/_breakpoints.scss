@@ -14,6 +14,13 @@
   }
 }
 
+// 桌機寬版：1500px 以上 (含)
+@mixin desktop-lg-up {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
+
 // 桌機全屏：1920px 以上 (含)
 @mixin desktop-full-up {
   @media (min-width: 1920px) {

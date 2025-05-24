@@ -1,0 +1,68 @@
+/* border：框線相關的設定 */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+
+// 框線基本樣式
+@function getBaseBorderStyle() {
+  @return 1px solid variables.$border-color;
+}
+
+// 產出各種框線樣式，可做成響應式。
+// $breakWord：斷點字樣，預設空字串。
+@mixin genBorder($breakWord: '') {
+  // 加上基本框線
+  .border#{$breakWord} {
+    border: getBaseBorderStyle();
+  }
+  .border#{$breakWord}-top {
+    border-top: getBaseBorderStyle();
+  }
+  .border#{$breakWord}-right {
+    border-right: getBaseBorderStyle();
+  }
+  .border#{$breakWord}-bottom {
+    border-bottom: getBaseBorderStyle();
+  }
+  .border#{$breakWord}-left {
+    border-left: getBaseBorderStyle();
+  }
+  
+  // 移除框線
+  .border#{$breakWord}-0 {
+    border: 0;
+  }
+  .border#{$breakWord}-top-0 {
+    border-top: 0;
+  }
+  .border#{$breakWord}-right-0 {
+    border-right: 0;
+  }
+  .border#{$breakWord}-bottom-0 {
+    border-bottom: 0;
+  }
+  .border#{$breakWord}-left-0 {
+    border-left: 0;
+  }
+}
+
+/* 響應式框線樣式 */
+// 手機
+@include genBorder;
+// 平板
+@include breakpoints.pad-up {
+  @include genBorder(variables.$class-pad);
+}
+// 桌機
+@include breakpoints.desktop-up {
+  @include genBorder(variables.$class-dt);
+}
+
+/* 無響應式的其它框線樣式 */
+/* 框線顏色 */
+.border-black {
+  border-color: black;
+}
+.border-text {
+  border-color: variables.$color-text;
+}

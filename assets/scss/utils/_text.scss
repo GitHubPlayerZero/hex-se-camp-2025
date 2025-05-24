@@ -3,13 +3,13 @@
 @use '../base/variables';
 @use '../mixins/breakpoints';
 
-$sizes: 16, 20, 24, 28, 32, 52, 120;
+$sizes: 16, 20, 24, 28, 32, 40, 52;
 
 // 產出各種字體大小，可做成響應式。
 // $breakWord：斷點字樣，預設空字串。
 @mixin genFontSize($breakWord: '') {
   @each $s in $sizes {
-    .fs-#{$breakWord}#{$s} {
+    .fs#{$breakWord}-#{$s} {
       font-size: #{$s}px;
     }
   }
@@ -27,7 +27,15 @@ $sizes: 16, 20, 24, 28, 32, 52, 120;
   @include genFontSize(variables.$class-dt);
 }
 
-/* 無響應式的其它設定 */
+/* 無響應式的其它文字設定 */
 .fw-700 {
   font-weight: 700;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
 }

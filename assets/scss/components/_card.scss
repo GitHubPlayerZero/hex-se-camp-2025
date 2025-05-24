@@ -1,0 +1,53 @@
+/* card：卡片元件 */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+@use '../mixins/webkit-clamp';
+
+/* 部落格卡片 */
+// 部落格卡片 - 圖片
+.blog-card-img {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+// 部落格卡片 - 日期
+.blog-card-date {
+  display: block;
+  margin-bottom: 4px;
+}
+
+// 部落格卡片 - 標籤區
+.blog-card-tags {
+  display: flex;
+  column-gap: 8px;
+  
+  .hashtag {
+    color: variables.$color-primary;
+    font-size: 24px;
+    
+    .hashtag-link {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+  
+  .tag-primary {
+    background-color: variables.$color-primary;
+    color: white;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: variables.$border-radius;
+  }
+}
+
+// 部落格卡片 - 標題
+.blog-card-title {
+  margin-bottom: 8px;
+}
+
+// 部落格卡片 - 說明
+.blog-card-desc {
+  @include webkit-clamp.webkit-clamp(2);
+  margin-bottom: 16px;
+}

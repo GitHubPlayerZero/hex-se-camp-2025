@@ -1,9 +1,10 @@
-/* container：容器 */
+/* container：容器相關 */
 
 @use '../base/variables';
 @use '../mixins/breakpoints';
 
-.container {
+// container 基本設定
+@mixin container-base {
   // Gutter on outside
   padding-left: variables.$gutter-half;
   padding-right: variables.$gutter-half;
@@ -11,17 +12,60 @@
   // 水平置中
   margin-left: auto;
   margin-right: auto;
+}
 
-  // 手機優先
-  max-width: 375px;
-
+// 由手機開始的 container
+.container {
+  @include container-base;
+  max-width: variables.$container-width-phone;
+  
   // 平板
   @include breakpoints.pad-up {
-    max-width: 720px;
+    max-width: variables.$container-width-pad;
   }
 
   // 桌機
   @include breakpoints.desktop-up {
-    max-width: 1320px;
+    max-width: variables.$container-width-dt;
   }
+}
+
+// 由平板開始的 container
+@include breakpoints.pad-up {
+  .container-pad {
+    @include container-base;
+    max-width: variables.$container-width-pad;
+    
+    // 桌機
+    @include breakpoints.desktop-up {
+      max-width: variables.$container-width-dt;
+    }
+  }
+}
+
+// 由桌機開始的 container
+@include breakpoints.desktop-up {
+  .container-dt {
+    @include container-base;
+    max-width: variables.$container-width-dt;
+  }
+}
+
+// 清除 container 樣式，可做成響應式。
+// $breakWord：斷點字樣，預設空字串
+@mixin clearContainer($breakWord: '') {
+  .container#{$breakWord}-clear {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* 響應式清除 container 樣式 */
+// 平板
+@include breakpoints.pad-up {
+  @include clearContainer(variables.$class-pad);
+}
+// 桌機
+@include breakpoints.desktop-up {
+  @include clearContainer(variables.$class-dt);
 }

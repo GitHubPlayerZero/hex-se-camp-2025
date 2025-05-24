@@ -1,0 +1,56 @@
+/* title：各標題 */
+
+@use '../mixins/breakpoints';
+
+// h1
+.h1 {
+  --font-min: 52px;
+  --font-max: 58px;
+  --font-proprotion: 13.866dvw;
+  
+  font-weight: 900;
+  font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
+  
+  @include breakpoints.pad-up {
+    --font-min: 48px;
+    --font-max: 80px;
+    --font-proprotion: 6.3dvw;
+  }
+
+  @include breakpoints.desktop-up {
+    --font-max: 120px;
+    --font-proprotion: 5.7dvw;
+  }
+
+  @include breakpoints.desktop-full-up {
+    --font-min: 120px;
+    --font-max: 999px;
+    --font-proprotion: 6.25dvw;
+  }
+}
+
+.h1-sub {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+// h2
+.h2 {
+  font-weight: 700;
+  font-size: 48px;
+
+  @include breakpoints.pad-up {
+    font-size: 64px;
+  }
+}
+
+// h3
+.h3 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.h4 {
+  font-weight: 700;
+  font-size: 24px;
+}

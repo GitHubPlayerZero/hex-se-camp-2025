@@ -27,63 +27,63 @@ $spacer: (
 @mixin genSpacing($breakWord: '') {
 	@each $key, $value in $spacer {
 		// margin
-		.mt-#{$breakWord}#{$key} {
+		.mt#{$breakWord}-#{$key} {
 			margin-top: $value;
 		}
-		.mr-#{$breakWord}#{$key} {
+		.mr#{$breakWord}-#{$key} {
 			margin-right: $value;
 		}
-		.mb-#{$breakWord}#{$key} {
+		.mb#{$breakWord}-#{$key} {
 			margin-bottom: $value;
 		}
-		.ml-#{$breakWord}#{$key} {
+		.ml#{$breakWord}-#{$key} {
 			margin-left: $value;
 		}
-		.mx-#{$breakWord}#{$key} {
+		.mx#{$breakWord}-#{$key} {
 			margin-left: $value;
 			margin-right: $value;
 		}
-		.my-#{$breakWord}#{$key} {
+		.my#{$breakWord}-#{$key} {
 			margin-top: $value;
 			margin-bottom: $value;
 		}
-		.m-#{$breakWord}#{$key} {
+		.m#{$breakWord}-#{$key} {
 			margin: $value;
 		}
 		
 		// padding
-		.pt-#{$breakWord}#{$key} {
+		.pt#{$breakWord}-#{$key} {
 			padding-top: $value;
 		}
-		.pr-#{$breakWord}#{$key} {
+		.pr#{$breakWord}-#{$key} {
 			padding-right: $value;
 		}
-		.pb-#{$breakWord}#{$key} {
+		.pb#{$breakWord}-#{$key} {
 			padding-bottom: $value;
 		}
-		.pl-#{$breakWord}#{$key} {
+		.pl#{$breakWord}-#{$key} {
 			padding-left: $value;
 		}
-		.px-#{$breakWord}#{$key} {
+		.px#{$breakWord}-#{$key} {
 			padding-left: $value;
 			padding-right: $value;
 		}
-		.py-#{$breakWord}#{$key} {
+		.py#{$breakWord}-#{$key} {
 			padding-top: $value;
 			padding-bottom: $value;
 		}
-		.p-#{$breakWord}#{$key} {
+		.p#{$breakWord}-#{$key} {
 			padding: $value;
 		}
 		
 		// gap
-		.col-gap-#{$breakWord}#{$key} {
+		.col-gap#{$breakWord}-#{$key} {
 			column-gap: $value;
 		}
-		.row-gap-#{$breakWord}#{$key} {
+		.row-gap#{$breakWord}-#{$key} {
 			row-gap: $value;
 		}
-		.gap-#{$breakWord}#{$key} {
+		.gap#{$breakWord}-#{$key} {
 			gap: $value;
 		}
 	}
@@ -101,7 +101,7 @@ $spacer: (
 	@include genSpacing(variables.$class-dt);
 }
 
-/* 無響應式的其它設定 */
+/* 無響應式的其它間距設定 */
 .center {
   margin-left: auto;
   margin-right: auto;

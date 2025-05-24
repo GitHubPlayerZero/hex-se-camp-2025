@@ -1,0 +1,32 @@
+/* button：按鈕樣式 */
+
+@use '../base/variables';
+
+.btn {
+  // 基礎按鈕樣式
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: variables.$border-radius;
+  color: variables.$color-text;
+  background-color: transparent;
+  padding: 8px 16px;
+  
+  &:hover {
+    color: white;
+    background-color: variables.$color-text;
+    opacity: 1;
+  }
+
+  // 主按鈕樣式
+  &.btn-primary {
+    border-color: variables.$color-primary;
+    color: variables.$color-primary;
+    font-weight: 700;
+    background-color: white;
+    
+    &:hover {
+      color: white;
+      background-color: variables.$color-primary;
+    }
+  }
+}

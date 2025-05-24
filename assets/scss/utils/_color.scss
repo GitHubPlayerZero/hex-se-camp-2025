@@ -1,0 +1,15 @@
+/* color：顏色 */
+
+@use '../base/variables';
+
+@each $key, $value in variables.$theme-colors {
+  // 背景
+  .bg-#{$key} {
+    background-color: $value;
+  }
+
+  // 文字
+  .color-#{$key} {
+    color: $value;
+  }
+}
