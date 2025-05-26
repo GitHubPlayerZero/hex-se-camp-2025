@@ -3,6 +3,7 @@
 @mixin webkit-clamp($line-num) {
   display: -webkit-box;
   -webkit-line-clamp: $line-num;
+  line-clamp: $line-num;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

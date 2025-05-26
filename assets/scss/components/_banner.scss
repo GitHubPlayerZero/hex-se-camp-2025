@@ -1,0 +1,93 @@
+/* banner：共同的 banner 樣式設定 */
+
+@use '../base/variables';
+@use '../mixins/breakpoints';
+
+.banner {
+  @include breakpoints.pad-up {
+    display: flex;
+  }
+}
+
+// 照片區塊
+.banner-picture {
+  img {
+    width: 100%;
+  }
+
+  @include breakpoints.pad-up {
+    width: 50%;
+  }
+}
+
+// 內容區塊
+.banner-content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  
+  @include breakpoints.pad-up {
+    width: 50%;
+    align-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+// 背景圖
+.banner-bg {
+  background-image: url("../assets/images/index/hero-section2.png");
+  background-size: cover;
+
+  @include breakpoints.pad-up {
+    background-image: url("../assets/images/index/hero-section2-dt.png");
+  }
+}
+
+// 標題
+.banner-title {
+  color: variables.$color-primary;
+  padding-left: 12px;
+
+  @include breakpoints.pad-up {
+    padding-left: 32px;
+  }
+
+  @include breakpoints.desktop-up {
+    padding-left: 80px;
+  }
+}
+
+// 主標題
+.banner-title-main {
+  --font-min: 52px;
+  --font-max: 58px;
+  --font-proprotion: 13.866dvw;
+  
+  font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
+  font-weight: 900;
+  
+  margin-bottom: 12px;
+
+  @include breakpoints.pad-up {
+    --font-min: 48px;
+    --font-max: 80px;
+    --font-proprotion: 6.3dvw;
+  }
+
+  @include breakpoints.desktop-up {
+    --font-max: 120px;
+    --font-proprotion: 5.7dvw;
+  }
+
+  @include breakpoints.desktop-full-up {
+    --font-min: 120px;
+    --font-max: 999px;
+    --font-proprotion: 6.25dvw;
+  }
+}
+
+// 次標題
+.banner-title-sub {
+  font-weight: 700;
+  font-size: 28px;
+}

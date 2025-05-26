@@ -295,40 +295,95 @@ a:hover {
   padding-bottom: 24px;
 }
 
-/* title：各標題 */
-.h1 {
+/* banner：共同的 banner 樣式設定 */
+@media (min-width: 768px) {
+  .banner {
+    display: flex;
+  }
+}
+
+.banner-picture img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .banner-picture {
+    width: 50%;
+  }
+}
+
+.banner-content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .banner-content {
+    width: 50%;
+    align-content: center;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.banner-bg {
+  background-image: url("../assets/images/index/hero-section2.png");
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .banner-bg {
+    background-image: url("../assets/images/index/hero-section2-dt.png");
+  }
+}
+
+.banner-title {
+  color: #0027D5;
+  padding-left: 12px;
+}
+@media (min-width: 768px) {
+  .banner-title {
+    padding-left: 32px;
+  }
+}
+@media (min-width: 1200px) {
+  .banner-title {
+    padding-left: 80px;
+  }
+}
+
+.banner-title-main {
   --font-min: 52px;
   --font-max: 58px;
   --font-proprotion: 13.866dvw;
-  font-weight: 900;
   font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
+  font-weight: 900;
+  margin-bottom: 12px;
 }
 @media (min-width: 768px) {
-  .h1 {
+  .banner-title-main {
     --font-min: 48px;
     --font-max: 80px;
     --font-proprotion: 6.3dvw;
   }
 }
 @media (min-width: 1200px) {
-  .h1 {
+  .banner-title-main {
     --font-max: 120px;
     --font-proprotion: 5.7dvw;
   }
 }
 @media (min-width: 1920px) {
-  .h1 {
+  .banner-title-main {
     --font-min: 120px;
     --font-max: 999px;
     --font-proprotion: 6.25dvw;
   }
 }
 
-.h1-sub {
+.banner-title-sub {
   font-weight: 700;
   font-size: 28px;
 }
 
+/* title：各標題 */
 .h2 {
   font-weight: 700;
   font-size: 48px;
@@ -392,11 +447,11 @@ a:hover {
   -moz-column-gap: 8px;
        column-gap: 8px;
 }
-.blog-card-tags .hashtag {
+.blog-card-tags .tag-title {
   color: #0027D5;
   font-size: 24px;
 }
-.blog-card-tags .hashtag .hashtag-link {
+.blog-card-tags .tag-title-link {
   display: inline-block;
   height: 100%;
 }
@@ -415,6 +470,7 @@ a:hover {
 .blog-card-desc {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 16px;

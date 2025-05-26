@@ -4,51 +4,14 @@
 @use '../mixins/breakpoints';
 
 /* Banner */
-// Banner - 身份
-.banner-identity {
-  flex-grow: 1;
-  background-image: url("../assets/images/index/hero-section2.png");
-  background-size: cover;
-  color: variables.$color-primary;
+// Banner - 內容區塊
+.banner-content {
   height: 356px;
-
+  
   @include breakpoints.pad-up {
-    background-image: url("../assets/images/index/hero-section2-dt.png");
     height: auto;
-    align-content: center;
   }
 }
-
-// .banner-identity-name {
-//   // TODO 或許可以改用 title .h1
-//   --font-min: 52px;
-//   --font-max: 58px;
-//   --font-proprotion: 13.866dvw;
-
-//   // TODO 或許可以改用 title .h1
-//   font-weight: 900;
-//   font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
-
-//   margin-bottom: 12px;
-
-//   // TODO 或許可以改用 title .h1
-//   @include breakpoints.pad-up {
-//     --font-min: 48px;
-//     --font-max: 80px;
-//     --font-proprotion: 6.3dvw;
-//   }
-
-//   @include breakpoints.desktop-up {
-//     --font-max: 120px;
-//     --font-proprotion: 5.7dvw;
-//   }
-
-//   @include breakpoints.desktop-full-up {
-//     --font-min: 120px;
-//     --font-max: 999px;
-//     --font-proprotion: 6.25dvw;
-//   }
-// }
 
 // Banner - 介紹
 .banner-intro {

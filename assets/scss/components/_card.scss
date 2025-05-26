@@ -22,14 +22,14 @@
   display: flex;
   column-gap: 8px;
   
-  .hashtag {
+  .tag-title {
     color: variables.$color-primary;
     font-size: 24px;
-    
-    .hashtag-link {
-      display: inline-block;
-      height: 100%;
-    }
+  }
+  
+  .tag-title-link {
+    display: inline-block;
+    height: 100%;
   }
   
   .tag-primary {

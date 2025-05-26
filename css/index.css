@@ -1,18 +1,12 @@
 @charset "UTF-8";
 /* index page style */
 /* Banner */
-.banner-identity {
-  flex-grow: 1;
-  background-image: url("../assets/images/index/hero-section2.png");
-  background-size: cover;
-  color: #0027D5;
+.banner-content {
   height: 356px;
 }
 @media (min-width: 768px) {
-  .banner-identity {
-    background-image: url("../assets/images/index/hero-section2-dt.png");
+  .banner-content {
     height: auto;
-    align-content: center;
   }
 }
 
