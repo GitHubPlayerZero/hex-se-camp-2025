@@ -1,0 +1,12 @@
+@use '../base/variables';
+
+// container 基本設定
+@mixin container-base {
+  // Gutter on outside
+  padding-left: variables.$gutter-half;
+  padding-right: variables.$gutter-half;
+
+  // 水平置中
+  margin-left: auto;
+  margin-right: auto;
+}
