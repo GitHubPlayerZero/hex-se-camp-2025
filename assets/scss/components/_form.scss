@@ -1,0 +1,26 @@
+/* form：表單相關元件 */
+
+@use '../base/variables';
+
+/* 帶有 icon 的 input */
+.input-with-icon {
+  position: relative;
+  
+  .icon {
+    display: flex;
+    font-size: 24px;
+    color: variables.$color-text;
+    
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+  }
+  
+  .input {
+    width: 100%;
+    border: 1px solid variables.$color-text;
+    border-radius: variables.$border-radius;
+    padding: 16px 48px 16px 50px;
+  }
+}

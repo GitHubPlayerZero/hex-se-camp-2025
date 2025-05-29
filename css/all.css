@@ -558,6 +558,67 @@ a:hover {
   margin-bottom: 16px;
 }
 
+/* pagination：分頁 */
+.pagination {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4B4B4B;
+  background-color: white;
+  border-radius: 40px;
+  padding: 8px 20px;
+}
+.pagination .active {
+  color: #0027D5;
+  background-color: #d6e6ff;
+  pointer-events: none;
+}
+
+.page-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.page-prev, .page-next {
+  font-size: 24px;
+  width: auto;
+}
+
+.page-link:hover {
+  background-color: #d6e6ff;
+  opacity: 1;
+}
+.page-link:active {
+  transform: scale(0.8);
+}
+
+/* form：表單相關元件 */
+/* 帶有 icon 的 input */
+.input-with-icon {
+  position: relative;
+}
+.input-with-icon .icon {
+  display: flex;
+  font-size: 24px;
+  color: #4B4B4B;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.input-with-icon .input {
+  width: 100%;
+  border: 1px solid #4B4B4B;
+  border-radius: 40px;
+  padding: 16px 48px 16px 50px;
+}
+
 /* flex 相關設定 */
 /* 響應式 flex 效果 */
 .direction-row {
@@ -3592,7 +3653,6 @@ a:hover {
   }
 }
 /* 無響應式的其它框線樣式 */
-/* 框線顏色 */
 .border-black {
   border-color: black;
 }
@@ -3631,6 +3691,10 @@ a:hover {
   position: relative;
 }
 
+.position-absolute {
+  position: absolute;
+}
+
 @media (min-width: 768px) {
   .d-pad-flex {
     display: flex;
@@ -3652,6 +3716,9 @@ a:hover {
   }
   .position-pad-relative {
     position: relative;
+  }
+  .position-pad-absolute {
+    position: absolute;
   }
 }
 @media (min-width: 1200px) {
@@ -3676,9 +3743,16 @@ a:hover {
   .position-dt-relative {
     position: relative;
   }
+  .position-dt-absolute {
+    position: absolute;
+  }
 }
 /* 無響應式的其它 utility 設定 */
 .object-fit-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.pointer-events-none {
+  pointer-events: none;
 }/*# sourceMappingURL=all.css.map */
