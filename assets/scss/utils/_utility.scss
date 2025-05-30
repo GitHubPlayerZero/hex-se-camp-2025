@@ -32,6 +32,9 @@
   .position#{$breakWord}-relative {
     position: relative;
   }
+  .position#{$breakWord}-absolute {
+    position: absolute;
+  }
 }
 
 /* 響應式 utility */
@@ -49,4 +52,8 @@
 /* 無響應式的其它 utility 設定 */
 .object-fit-cover {
   object-fit: cover;
+}
+
+.pointer-events-none {
+  pointer-events: none;
 }

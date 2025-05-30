@@ -2,6 +2,13 @@
 
 @use '../base/variables';
 @use '../mixins/breakpoints';
+@use '../mixins/container';
+
+// 計算 banner 的 container 寬度
+// $width：原 container 寬度
+@function getBannerContainerWidth($width) {
+  @return calc($width / 2 - variables.$gutter-half)
+}
 
 .banner {
   @include breakpoints.pad-up {
@@ -9,31 +16,59 @@
   }
 }
 
-// 照片區塊
-.banner-picture {
+.banner-dt {
+  @include breakpoints.desktop-up {
+    display: flex;
+  }
+}
+
+/* 照片區塊 */
+.banner-picture,
+.banner-picture-dt {
   img {
     width: 100%;
   }
+}
 
+.banner-picture {
   @include breakpoints.pad-up {
     width: 50%;
   }
 }
 
-// 內容區塊
-.banner-content {
+.banner-picture-dt {
+  @include breakpoints.desktop-up {
+    width: 50%;
+  }
+}
+
+/* 內容區塊 */
+@mixin banner-content {
+  align-content: center;
+  width: 50%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.banner-content,
+.banner-content-dt {
   padding-top: 24px;
   padding-bottom: 24px;
-  
+}
+
+.banner-content {
   @include breakpoints.pad-up {
-    width: 50%;
-    align-content: center;
-    padding-top: 0;
-    padding-bottom: 0;
+    @include banner-content;
   }
 }
 
-// 背景圖
+.banner-content-dt {
+  @include breakpoints.desktop-up {
+    @include banner-content;
+  }
+}
+
+/* 背景圖 */
 .banner-bg {
   background-image: url("../assets/images/index/hero-section2.png");
   background-size: cover;
@@ -43,8 +78,10 @@
   }
 }
 
-// 標題
+/* 標題 */
 .banner-title {
+  display: flex;
+  flex-direction: column;
   color: variables.$color-primary;
   padding-left: 12px;
 
@@ -57,15 +94,15 @@
   }
 }
 
-// 主標題
+/* 主標題 */
 .banner-title-main {
   --font-min: 52px;
   --font-max: 58px;
   --font-proprotion: 13.866dvw;
-  
+
   font-size: clamp(var(--font-min), var(--font-proprotion), var(--font-max));
   font-weight: 900;
-  
+
   margin-bottom: 12px;
 
   @include breakpoints.pad-up {
@@ -86,8 +123,39 @@
   }
 }
 
-// 次標題
+/* 次標題 */
 .banner-title-sub {
   font-weight: 700;
   font-size: 28px;
+}
+
+/* 非滿版的內容 */
+.banner-container,
+.banner-container-dt {
+  @include container.container-base;
+  max-width: variables.$container-width-phone;
+}
+
+.banner-container {
+  @include breakpoints.pad-up {
+    max-width: getBannerContainerWidth(variables.$container-width-pad);
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  @include breakpoints.desktop-up {
+    max-width: getBannerContainerWidth(variables.$container-width-dt);
+  }
+}
+
+.banner-container-dt {
+  @include breakpoints.pad-up {
+    max-width: variables.$container-width-pad;
+  }
+
+  @include breakpoints.desktop-up {
+    max-width: getBannerContainerWidth(variables.$container-width-dt);
+    margin-left: 0;
+    padding-left: 0;
+  }
 }

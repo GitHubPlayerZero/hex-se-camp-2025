@@ -1,0 +1,6 @@
+@use '../base/variables';
+
+// 框線基本樣式
+@function getBaseBorderStyle() {
+  @return 1px solid variables.$border-color;
+}

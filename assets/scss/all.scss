@@ -9,9 +9,12 @@
 @use './components/header';
 @use './components/footer';
 @use './components/banner';
+@use './components/section';
 @use './components/title';
 @use './components/button';
 @use './components/card';
+@use './components/pagination';
+@use './components/form';
 
 // Utils
 @use './utils/flex';

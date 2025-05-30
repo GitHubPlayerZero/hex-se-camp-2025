@@ -302,28 +302,56 @@ a:hover {
   }
 }
 
-.banner-picture img {
+@media (min-width: 1200px) {
+  .banner-dt {
+    display: flex;
+  }
+}
+
+/* 照片區塊 */
+.banner-picture img,
+.banner-picture-dt img {
   width: 100%;
 }
+
 @media (min-width: 768px) {
   .banner-picture {
     width: 50%;
   }
 }
 
-.banner-content {
+@media (min-width: 1200px) {
+  .banner-picture-dt {
+    width: 50%;
+  }
+}
+
+/* 內容區塊 */
+.banner-content,
+.banner-content-dt {
   padding-top: 24px;
   padding-bottom: 24px;
 }
+
 @media (min-width: 768px) {
   .banner-content {
-    width: 50%;
     align-content: center;
+    width: 50%;
     padding-top: 0;
     padding-bottom: 0;
   }
 }
 
+@media (min-width: 1200px) {
+  .banner-content-dt {
+    align-content: center;
+    width: 50%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* 背景圖 */
 .banner-bg {
   background-image: url("../assets/images/index/hero-section2.png");
   background-size: cover;
@@ -334,7 +362,10 @@ a:hover {
   }
 }
 
+/* 標題 */
 .banner-title {
+  display: flex;
+  flex-direction: column;
   color: #0027D5;
   padding-left: 12px;
 }
@@ -349,6 +380,7 @@ a:hover {
   }
 }
 
+/* 主標題 */
 .banner-title-main {
   --font-min: 52px;
   --font-max: 58px;
@@ -378,28 +410,78 @@ a:hover {
   }
 }
 
+/* 次標題 */
 .banner-title-sub {
   font-weight: 700;
   font-size: 28px;
 }
 
+/* 非滿版的內容 */
+.banner-container,
+.banner-container-dt {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 375px;
+}
+
+@media (min-width: 768px) {
+  .banner-container {
+    max-width: 348px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .banner-container {
+    max-width: 648px;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner-container-dt {
+    max-width: 720px;
+  }
+}
+@media (min-width: 1200px) {
+  .banner-container-dt {
+    max-width: 648px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+/* section：區塊共同樣式 */
+.section {
+  border: 1px solid #6C757D;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
 /* title：各標題 */
-.h2 {
+.title2 {
   font-weight: 700;
   font-size: 48px;
 }
 @media (min-width: 768px) {
-  .h2 {
+  .title2 {
     font-size: 64px;
   }
 }
 
-.h3 {
+.title3 {
   font-weight: 700;
   font-size: 28px;
 }
 
-.h4 {
+.title4 {
   font-weight: 700;
   font-size: 24px;
 }
@@ -474,6 +556,67 @@ a:hover {
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 16px;
+}
+
+/* pagination：分頁 */
+.pagination {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4B4B4B;
+  background-color: white;
+  border-radius: 40px;
+  padding: 8px 20px;
+}
+.pagination .active {
+  color: #0027D5;
+  background-color: #d6e6ff;
+  pointer-events: none;
+}
+
+.page-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.page-prev, .page-next {
+  font-size: 24px;
+  width: auto;
+}
+
+.page-link:hover {
+  background-color: #d6e6ff;
+  opacity: 1;
+}
+.page-link:active {
+  transform: scale(0.8);
+}
+
+/* form：表單相關元件 */
+/* 帶有 icon 的 input */
+.input-with-icon {
+  position: relative;
+}
+.input-with-icon .icon {
+  display: flex;
+  font-size: 24px;
+  color: #4B4B4B;
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.input-with-icon .input {
+  width: 100%;
+  border: 1px solid #4B4B4B;
+  border-radius: 40px;
+  padding: 16px 48px 16px 50px;
 }
 
 /* flex 相關設定 */
@@ -3510,7 +3653,6 @@ a:hover {
   }
 }
 /* 無響應式的其它框線樣式 */
-/* 框線顏色 */
 .border-black {
   border-color: black;
 }
@@ -3549,6 +3691,10 @@ a:hover {
   position: relative;
 }
 
+.position-absolute {
+  position: absolute;
+}
+
 @media (min-width: 768px) {
   .d-pad-flex {
     display: flex;
@@ -3570,6 +3716,9 @@ a:hover {
   }
   .position-pad-relative {
     position: relative;
+  }
+  .position-pad-absolute {
+    position: absolute;
   }
 }
 @media (min-width: 1200px) {
@@ -3594,9 +3743,16 @@ a:hover {
   .position-dt-relative {
     position: relative;
   }
+  .position-dt-absolute {
+    position: absolute;
+  }
 }
 /* 無響應式的其它 utility 設定 */
 .object-fit-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.pointer-events-none {
+  pointer-events: none;
 }/*# sourceMappingURL=all.css.map */

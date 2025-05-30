@@ -2,21 +2,11 @@
 
 @use '../base/variables';
 @use '../mixins/breakpoints';
-
-// container 基本設定
-@mixin container-base {
-  // Gutter on outside
-  padding-left: variables.$gutter-half;
-  padding-right: variables.$gutter-half;
-
-  // 水平置中
-  margin-left: auto;
-  margin-right: auto;
-}
+@use '../mixins/container';
 
 // 由手機開始的 container
 .container {
-  @include container-base;
+  @include container.container-base;
   max-width: variables.$container-width-phone;
   
   // 平板
@@ -33,7 +23,7 @@
 // 由平板開始的 container
 @include breakpoints.pad-up {
   .container-pad {
-    @include container-base;
+    @include container.container-base;
     max-width: variables.$container-width-pad;
     
     // 桌機
@@ -46,7 +36,7 @@
 // 由桌機開始的 container
 @include breakpoints.desktop-up {
   .container-dt {
-    @include container-base;
+    @include container.container-base;
     max-width: variables.$container-width-dt;
   }
 }

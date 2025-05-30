@@ -1,0 +1,15 @@
+/* section：區塊共同樣式 */
+
+@use '../mixins/breakpoints';
+@use '../functions/border';
+
+.section {
+  border: border.getBaseBorderStyle();
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  @include breakpoints.pad-up {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}

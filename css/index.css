@@ -42,18 +42,6 @@
   border-radius: 10px;
 }
 
-/* 區塊 */
-.section {
-  padding-top: 64px;
-  padding-bottom: 64px;
-}
-@media (min-width: 768px) {
-  .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
 /* 裝飾 */
 .decorator {
   padding: 18.75px 5px;
