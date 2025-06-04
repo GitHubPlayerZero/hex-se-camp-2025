@@ -85,6 +85,7 @@ select,
 textarea {
   font-family: inherit;
   font-size: inherit;
+  font-weight: inherit;
 }
 
 button:enabled,
@@ -105,6 +106,10 @@ a {
 
 a:hover {
   opacity: 0.7;
+}
+
+h2, h3, h4 {
+  font-weight: 700;
 }
 
 /* container：容器相關 */
@@ -465,28 +470,8 @@ a:hover {
   }
 }
 
-/* title：各標題 */
-.title2 {
-  font-weight: 700;
-  font-size: 48px;
-}
-@media (min-width: 768px) {
-  .title2 {
-    font-size: 64px;
-  }
-}
-
-.title3 {
-  font-weight: 700;
-  font-size: 28px;
-}
-
-.title4 {
-  font-weight: 700;
-  font-size: 24px;
-}
-
 /* button：按鈕樣式 */
+/* 標準按鈕 */
 .btn {
   display: inline-block;
   border: 1px solid black;
@@ -509,6 +494,22 @@ a:hover {
 .btn.btn-primary:hover {
   color: white;
   background-color: #0027D5;
+}
+
+/* 社群按鈕 */
+.btn-social {
+  display: flex;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+}
+
+.btn-social-link {
+  display: flex;
+  border-radius: 10px;
+}
+.btn-social-link:hover {
+  background-color: #d6e6ff;
+  opacity: 1;
 }
 
 /* card：卡片元件 */
@@ -580,9 +581,10 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
   border-radius: 6px;
+  width: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .page-prev, .page-next {
@@ -3483,8 +3485,16 @@ a:hover {
   font-size: 40px;
 }
 
+.fs-48 {
+  font-size: 48px;
+}
+
 .fs-52 {
   font-size: 52px;
+}
+
+.fs-64 {
+  font-size: 64px;
 }
 
 @media (min-width: 768px) {
@@ -3506,8 +3516,14 @@ a:hover {
   .fs-pad-40 {
     font-size: 40px;
   }
+  .fs-pad-48 {
+    font-size: 48px;
+  }
   .fs-pad-52 {
     font-size: 52px;
+  }
+  .fs-pad-64 {
+    font-size: 64px;
   }
 }
 @media (min-width: 1200px) {
@@ -3529,8 +3545,14 @@ a:hover {
   .fs-dt-40 {
     font-size: 40px;
   }
+  .fs-dt-48 {
+    font-size: 48px;
+  }
   .fs-dt-52 {
     font-size: 52px;
+  }
+  .fs-dt-64 {
+    font-size: 64px;
   }
 }
 /* 無響應式的其它文字設定 */

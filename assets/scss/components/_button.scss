@@ -2,6 +2,7 @@
 
 @use '../base/variables';
 
+/* 標準按鈕 */
 .btn {
   // 基礎按鈕樣式
   display: inline-block;
@@ -28,5 +29,22 @@
       color: white;
       background-color: variables.$color-primary;
     }
+  }
+}
+
+/* 社群按鈕 */
+.btn-social {
+  display: flex;
+  column-gap: 4px;
+}
+
+// 社群按鈕 - 連結
+.btn-social-link {
+  display: flex;
+  border-radius: 10px;
+  
+  &:hover {
+    background-color: variables.$color-hover-bg;
+    opacity: 1;
   }
 }

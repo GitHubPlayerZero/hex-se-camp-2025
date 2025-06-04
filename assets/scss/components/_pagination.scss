@@ -17,7 +17,7 @@
   // 激活中的頁碼
   .active {
     color: variables.$color-primary;
-    background-color: variables.$color-pagination-bg;
+    background-color: variables.$color-hover-bg;
     pointer-events: none;
   }
 }
@@ -27,9 +27,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
   border-radius: 6px;
+  width: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 // 上一頁、下一頁
@@ -41,7 +42,7 @@
 // 連結
 .page-link {
   &:hover {
-    background-color: variables.$color-pagination-bg;
+    background-color: variables.$color-hover-bg;
     opacity: 1;
   }
   &:active {

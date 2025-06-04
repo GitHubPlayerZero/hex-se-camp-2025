@@ -38,12 +38,6 @@
   }
 }
 
-// Banner - 社群連結
-.banner-social-link:hover {
-  background-color: variables.$color-primary-light;
-  border-radius: 10px;
-}
-
 /* 裝飾 */
 .decorator {
   padding: 18.75px 5px;
@@ -209,7 +203,6 @@
   width: 100%;
   background: variables.$color-dark-940;
   font-size: 20px;
-  font-weight: 500;
   padding: 8px 16px;
   border: none;
 }
