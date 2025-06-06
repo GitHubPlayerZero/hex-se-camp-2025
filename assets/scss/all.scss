@@ -5,11 +5,15 @@
 @use './layout/container';
 @use './layout/grid';
 
+// Content
+@use './content/typography';
+@use './content/section';
+@use './content/article';
+
 // Components
 @use './components/header';
 @use './components/footer';
 @use './components/banner';
-@use './components/section';
 @use './components/button';
 @use './components/card';
 @use './components/pagination';
