@@ -108,7 +108,7 @@ a:hover {
   opacity: 0.7;
 }
 
-h2, h3, h4 {
+h1, h2, h3, h4 {
   font-weight: 700;
 }
 
@@ -276,6 +276,73 @@ h2, h3, h4 {
     width: 100%;
   }
 }
+/* typography：內容排版相關樣式 */
+.highlight {
+  color: #0027D5;
+}
+
+.list {
+  list-style: disc;
+  padding-left: 1.5em;
+}
+
+.list-order {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+}
+
+/* section：區塊共同樣式 */
+.section {
+  border: 1px solid #6C757D;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+/* article：文章相關樣式 */
+.article-section {
+  margin-bottom: 48px;
+}
+
+.article-section-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.article-title-main {
+  color: #0027D5;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.article-title-sub {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.article-paragraph {
+  margin-bottom: 8px;
+}
+
+.article-note {
+  background-color: #EDEDED;
+  font-weight: 700;
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
 /* header */
 .header-menu {
   display: flex;
@@ -457,19 +524,6 @@ h2, h3, h4 {
   }
 }
 
-/* section：區塊共同樣式 */
-.section {
-  border: 1px solid #6C757D;
-  padding-top: 64px;
-  padding-bottom: 64px;
-}
-@media (min-width: 768px) {
-  .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
 /* button：按鈕樣式 */
 /* 標準按鈕 */
 .btn {
@@ -483,7 +537,6 @@ h2, h3, h4 {
 .btn:hover {
   color: white;
   background-color: #4B4B4B;
-  opacity: 1;
 }
 .btn.btn-primary {
   border-color: #0027D5;

@@ -1,0 +1,46 @@
+/* article：文章相關樣式 */
+
+@use '../base/variables';
+
+// 區塊
+.article-section {
+  margin-bottom: 48px;
+}
+
+// 區塊 - 圖片
+.article-section-img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+// 主標題
+.article-title-main {
+  color: variables.$color-primary;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+// 次標題
+.article-title-sub {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+// 段落
+.article-paragraph {
+  margin-bottom: 8px;
+}
+
+// note 區塊
+.article-note {
+  background-color: variables.$color-dark-925;
+  font-weight: 700;
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
