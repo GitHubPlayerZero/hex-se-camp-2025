@@ -2,12 +2,13 @@
 
 @use '../base/variables';
 @use '../mixins/breakpoints';
+@use '../components/swiper-blog';
 
 /* Banner */
 // Banner - 內容區塊
 .banner-content {
   height: 356px;
-  
+
   @include breakpoints.pad-up {
     height: auto;
   }
@@ -82,65 +83,21 @@
   height: 40px;
 }
 
-/* 卡片切換按鈕 */
-.btn-arrow {
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-
-  &:enabled:hover {
-    box-shadow: 0 0 10px 3px gray;
-    opacity: 1;
-  }
-
-  .btn-arrow-img {
-    width: 100%;
-  }
-}
-
-// 當螢幕寬 desktop-lg 以上時，改變按鈕的呈現
-@include breakpoints.desktop-lg-up {
-  // 隱藏此按鈕區，改用其它按鈕
-  .card-slide-btn-area {
-    display: none;
-  }
-  // 啟用此按鈕區
-  .card-slide-btn-area-lg {
-    display: block;
-  }
-  
-  // 改變按鈕位置
-  .btn-arrow {
-    --distance: -56px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    
-    &.arrow-lg-left {
-      left: var(--distance);
-    }
-    &.arrow-lg-right {
-      right: var(--distance);
-    }
-  }
-}
-
 /* 職涯諮詢 */
 // 職涯諮詢 - 說明
 .consultation-desc {
   margin-top: -160px;
-  
+
   @include breakpoints.pad-up {
     margin-top: 0;
   }
 }
 
 // 職涯諮詢 - 說明段落 1、說明段落 2
-.consultation-desc-1, .consultation-desc-2 {
+.consultation-desc-1,
+.consultation-desc-2 {
   padding: 40px 24px;
-  
+
   @include breakpoints.desktop-up {
     padding: 80px 40px;
   }
@@ -150,7 +107,7 @@
 .consultation-desc-1 {
   background-color: white;
   margin-bottom: 12px;
-  
+
   @include breakpoints.desktop-up {
     margin-bottom: -40px;
     position: relative;
@@ -161,7 +118,7 @@
 // 職涯諮詢 - 說明段落 2
 .consultation-desc-2 {
   background-color: variables.$color-dark-950;
-  
+
   @include breakpoints.desktop-up {
     position: relative;
   }
@@ -174,14 +131,14 @@
   background-size: cover;
   align-content: center;
   flex-grow: 1;
-  
+
   padding-top: 12px;
   padding-bottom: 12px;
 
   @include breakpoints.pad-up {
     padding: 24px 80px;
   }
-  
+
   @include breakpoints.desktop-up {
     background-image: url("../assets/images/index/hero-section3-dt.jpg");
     background-position: center;
@@ -192,7 +149,7 @@
 .newsletter-content {
   background-color: white;
   padding: 40px 24px;
-  
+
   @include breakpoints.desktop-full-up {
     padding: 80px;
   }

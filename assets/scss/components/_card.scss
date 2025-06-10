@@ -23,6 +23,7 @@
   column-gap: 8px;
   
   .tag-title {
+    @include webkit-clamp.webkit-clamp(1);
     color: variables.$color-primary;
     font-size: 24px;
   }
@@ -33,6 +34,7 @@
   }
   
   .tag-primary {
+    white-space: nowrap;
     background-color: variables.$color-primary;
     color: white;
     font-weight: 700;
@@ -43,6 +45,7 @@
 
 // 部落格卡片 - 標題
 .blog-card-title {
+  @include webkit-clamp.webkit-clamp(2);
   margin-bottom: 8px;
 }
 

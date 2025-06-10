@@ -1,0 +1,57 @@
+/* swiper-blog：部落格 swiper 樣式 */
+
+$swiper-nav-layout-breakpoint: 1499px;  // 導航按鈕轉換排版斷點，大於此斷點可容納桌機版的完整畫面，小於此斷點則以手機排版較適合
+$swiper-nav-btn-width: 44px; // 導航按鈕寬度
+$swiper-nav-btn-height: 44px; // 導航按鈕高度
+$swiper-nav-btn-dt-spacing: 24px; // 桌機：導航按鈕與主區塊的間距
+$swiper-nav-btn-dt-shift: ($swiper-nav-btn-width + $swiper-nav-btn-dt-spacing) * -1; // 桌機：導航按鈕位移距離
+
+/* swiper 切換按鈕 */
+.swiper-button-prev,
+.swiper-button-next {
+  width: $swiper-nav-btn-width;
+  height: $swiper-nav-btn-height;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  // 隱藏 swiper 預設的導航按鈕
+  &::after {
+    display: none;
+  }
+
+  &:enabled:hover {
+    box-shadow: 0 0 10px 3px gray;
+    opacity: 1;
+  }
+
+  .btn-arrow-img {
+    width: 100%;
+  }
+}
+
+// 預設桌機版：將按鈕移至主區塊兩旁
+.swiper-button-prev {
+  left: $swiper-nav-btn-dt-shift;
+}
+.swiper-button-next {
+  right: $swiper-nav-btn-dt-shift;
+}
+
+// 桌機以下：將按鈕移至下方
+@media (max-width: $swiper-nav-layout-breakpoint) {
+  // 取消 swiper 按鈕的預設效果
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    margin-top: 0;
+  }
+
+  // 按鈕區塊排版
+  .swiper-button-area {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 24px;
+    margin-top: 32px;
+  }
+}
