@@ -27,8 +27,18 @@
   <header>
     <nav class="container">
       <ul class="header-menu">
-        <li><a href="./index.html" class="header-menu-link">首頁</a></li>
-        <li><a href="./blog_list.html" class="header-menu-link">部落格</a></li>
+        <li>
+          <a href="javascript:void(0);" class="header-menu-link" 
+            onclick="trackGaLinkClick(event, 'index.html', 'nav', '首頁')">
+            首頁
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" class="header-menu-link" 
+            onclick="trackGaLinkClick(event, 'blog_list.html', 'nav', '部落格')">
+            部落格
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -242,7 +252,10 @@
               <p class="blog-card-desc">嗨，我是 Alyse，一名前端工程師兼職涯諮詢師。一直以來，我都很喜歡在部落格分享學習與工作心得，也常有讀者問：「我想轉職/自學前端，該從哪裡開始？」
                 其實自學的過程既自由又具挑戰性。我整理了三大關鍵，幫助你在短期內建立紮實基礎，並快速累積實戰經驗。希望能替你的前端之路帶來一些啟發與動力！</p>
 
-              <a href="./blog_article.html" class="btn">閱讀內文</a>
+              <a href="javascript:void(0);" class="btn" 
+                onclick="trackGaLinkClick(event, 'blog_article.html', 'card', '自學前端不用怕：從零開始的三大關鍵')">
+                閱讀內文
+              </a>
             </li>
 
             <!-- 卡片 - 2 -->
@@ -558,14 +571,12 @@
         <!-- Swiper 導航按鈕區塊 -->
         <div class="swiper-button-area">
           <!-- 切換上一個 -->
-          <button class="swiper-button-prev">
-            <img src="./assets/images/icons/arrow-left-circle-fill-primary.svg" alt="上一篇" loading="lazy"
-              class="btn-arrow-img">
+          <button class="swiper-button-prev" onclick="trackGaBtnClick('swiper', '上一個')">
+            <img src="./assets/images/icons/arrow-left-circle-fill-primary.svg" alt="上一篇" loading="lazy" class="btn-arrow-img">
           </button>
           <!-- 切換下一個 -->
-          <button class="swiper-button-next">
-            <img src="./assets/images/icons/arrow-right-circle-fill-primary.svg" alt="下一篇" loading="lazy"
-              class="btn-arrow-img">
+          <button class="swiper-button-next" onclick="trackGaBtnClick('swiper', '下一個')">
+            <img src="./assets/images/icons/arrow-right-circle-fill-primary.svg" alt="下一篇" loading="lazy" class="btn-arrow-img">
           </button>
         </div>
       </div>
@@ -733,7 +744,7 @@
             </p>
 
             <!-- 表單 -->
-            <form action="javascript:void(0)">
+            <form action="javascript:void(0)" name="formSubscription">
               <input type="text" class="newsletter-input mb-2" placeholder="請輸入您的大名" required>
               <input type="email" class="newsletter-input mb-6" placeholder="請輸入您的電子信箱" required>
               <button class="btn btn-primary">啟動訂閱</button>
@@ -845,6 +856,8 @@
 
   <!-- Swiper JS -->
   <script type="module" src="./assets/js/swiperBlog.js"></script>
+  <!-- GA JS -->
+  <script src="./assets/js/ga.js"></script>
 </body>
 
 </html>

@@ -22,8 +22,18 @@
   <header>
     <nav class="container">
       <ul class="header-menu">
-        <li><a href="./index.html" class="header-menu-link">首頁</a></li>
-        <li><a href="./blog_list.html" class="header-menu-link">部落格</a></li>
+        <li>
+          <a href="javascript:void(0);" class="header-menu-link" 
+            onclick="trackGaLinkClick(event, 'index.html', 'nav', '首頁')">
+            首頁
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" class="header-menu-link" 
+            onclick="trackGaLinkClick(event, 'blog_list.html', 'nav', '部落格')">
+            部落格
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -193,7 +203,7 @@
             
             <h2 class="article-title-main">結語</h2>
             
-            <p>自學前端可能遇到卡關、挫折，但同時也具備很高的自主性。只要把 基礎、框架、實踐 三大面向做好，就能在前端這條路上穩步前進。若你在學習過程中需要更多建議或想要職涯諮詢，歡迎透過<a href="./index.html#contact" class="d-pad-none highlight text-decoration-underline">聯絡方式</a><a href="#contact" class="d-none d-pad-inline-block highlight text-decoration-underline">聯絡方式</a>與我聯繫！</p>
+            <p>自學前端可能遇到卡關、挫折，但同時也具備很高的自主性。只要把 基礎、框架、實踐 三大面向做好，就能在前端這條路上穩步前進。若你在學習過程中需要更多建議或想要職涯諮詢，歡迎透過<a href="javascript:void(0);#contact" class="d-pad-none highlight text-decoration-underline">聯絡方式</a><a href="#contact" class="d-none d-pad-inline-block highlight text-decoration-underline">聯絡方式</a>與我聯繫！</p>
             
             <p class="article-note">「程式替你開路，諮詢替你指路，一起走向更寬廣的未來。」</p>
             
@@ -274,6 +284,9 @@
     <p>© 2025 Alyse Wang. All rights reserved.</p>
   </footer>
 
+  
+  <!-- GA JS -->
+  <script src="./assets/js/ga.js"></script>
 </body>
 
 </html>

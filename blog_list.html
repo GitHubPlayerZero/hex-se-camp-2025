@@ -24,8 +24,18 @@
   <header>
     <nav class="container">
       <ul class="header-menu">
-        <li><a href="./index.html" class="header-menu-link">首頁</a></li>
-        <li><a href="./blog_list.html" class="header-menu-link">部落格</a></li>
+        <li>
+          <a href="javascript:void(0);" class="header-menu-link" 
+            onclick="trackGaLinkClick(event, 'index.html', 'nav', '首頁')">
+            首頁
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" class="header-menu-link" 
+            onclick="trackGaLinkClick(event, 'blog_list.html', 'nav', '部落格')">
+            部落格
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -77,7 +87,10 @@
           其實自學的過程既自由又具挑戰性。我整理了三大關鍵，幫助你在短期內建立紮實基礎，並快速累積實戰經驗。希望能替你的前端之路帶來一些啟發與動力！
         </p>
 
-        <a href="./blog_article.html" class="btn">閱讀內文</a>
+        <a href="javascript:void(0);" class="btn" 
+          onclick="trackGaLinkClick(event, 'blog_article.html', 'card', '自學前端不用怕：從零開始的三大關鍵')">
+          閱讀內文
+        </a>
       </div>
     </div>
   </section>
@@ -468,6 +481,9 @@
     <p>© 2025 Alyse Wang. All rights reserved.</p>
   </footer>
 
+  
+  <!-- GA JS -->
+  <script src="./assets/js/ga.js"></script>
 </body>
 
 </html>
