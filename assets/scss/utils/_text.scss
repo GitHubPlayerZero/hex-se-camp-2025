@@ -3,7 +3,7 @@
 @use '../base/variables';
 @use '../mixins/breakpoints';
 
-$sizes: 16, 20, 24, 28, 32, 40, 48, 52, 64;
+$sizes: 20, 24, 28, 32, 48;
 
 // 產出各種字體大小，可做成響應式。
 // $breakWord：斷點字樣，預設空字串。

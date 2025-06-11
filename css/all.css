@@ -3525,10 +3525,6 @@ h1, h2, h3, h4 {
 
 /* text：有關文字的設定，如字體大小、粗體、斜體... 等 */
 /* 響應式字體大小 */
-.fs-16 {
-  font-size: 16px;
-}
-
 .fs-20 {
   font-size: 20px;
 }
@@ -3545,26 +3541,11 @@ h1, h2, h3, h4 {
   font-size: 32px;
 }
 
-.fs-40 {
-  font-size: 40px;
-}
-
 .fs-48 {
   font-size: 48px;
 }
 
-.fs-52 {
-  font-size: 52px;
-}
-
-.fs-64 {
-  font-size: 64px;
-}
-
 @media (min-width: 768px) {
-  .fs-pad-16 {
-    font-size: 16px;
-  }
   .fs-pad-20 {
     font-size: 20px;
   }
@@ -3577,23 +3558,11 @@ h1, h2, h3, h4 {
   .fs-pad-32 {
     font-size: 32px;
   }
-  .fs-pad-40 {
-    font-size: 40px;
-  }
   .fs-pad-48 {
     font-size: 48px;
   }
-  .fs-pad-52 {
-    font-size: 52px;
-  }
-  .fs-pad-64 {
-    font-size: 64px;
-  }
 }
 @media (min-width: 1200px) {
-  .fs-dt-16 {
-    font-size: 16px;
-  }
   .fs-dt-20 {
     font-size: 20px;
   }
@@ -3606,17 +3575,8 @@ h1, h2, h3, h4 {
   .fs-dt-32 {
     font-size: 32px;
   }
-  .fs-dt-40 {
-    font-size: 40px;
-  }
   .fs-dt-48 {
     font-size: 48px;
-  }
-  .fs-dt-52 {
-    font-size: 52px;
-  }
-  .fs-dt-64 {
-    font-size: 64px;
   }
 }
 /* 無響應式的其它文字設定 */
