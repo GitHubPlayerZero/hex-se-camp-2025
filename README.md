@@ -6,6 +6,7 @@
 - 以 SCSS 手刻格線系統、各種 utility class。
 - 以 [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass) 將 SCSS 編譯成 CSS 直接使用。
 - 使用 [Swiper](https://swiperjs.com/) 製作首頁「[部落格精選](https://githubplayerzero.github.io/personal-branding-website-hand/#blogFeatures)」文章切換。
+- 加入 GA 分析。
 - 多頁式（3 頁）。
 - 多欄式（Flex 排版）。
 - RWD：手機（優先）、平板、桌機。
