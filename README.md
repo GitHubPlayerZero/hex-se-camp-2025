@@ -6,7 +6,7 @@
 - 以 SCSS 手刻格線系統、各種 utility class。
 - 以 [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass) 將 SCSS 編譯成 CSS 直接使用。
 - 使用 [Swiper](https://swiperjs.com/) 製作首頁「[部落格精選](https://githubplayerzero.github.io/personal-branding-website-hand/#blogFeatures)」文章切換。
-- 加入 GA 分析。
+- 加入 [GA](https://developers.google.com/analytics?hl=zh-tw) 分析。
 - 多頁式（3 頁）。
 - 多欄式（Flex 排版）。
 - RWD：手機（優先）、平板、桌機。
@@ -46,30 +46,30 @@
 ### 手機
 - 首頁
 
-
+[mobile_index.webm](https://github.com/user-attachments/assets/9ee39d64-f514-41b6-8426-5d405d3334c2)
 
 - 部落格（文章列表）頁
 
-
+[mobile_blog_list.webm](https://github.com/user-attachments/assets/fb3ac3a7-da47-4567-bdc4-c63c55215506)
 
 - 部落格（文章內容）頁
 
-
+[mobile_blog.webm](https://github.com/user-attachments/assets/69ce698d-b577-486c-bc95-aa38089d4943)
 
 <br>
 
 ### 桌機
 - 首頁
 
-
+[dt_index.webm](https://github.com/user-attachments/assets/3ee128b9-187f-4049-ad43-31d0400897d8)
 
 - 部落格（文章列表）頁
 
-
+[dt_blog_list.webm](https://github.com/user-attachments/assets/dd233874-7f78-44fe-b7e4-570adc29559f)
 
 - 部落格（文章內容）頁
 
-
+[dt_blog.webm](https://github.com/user-attachments/assets/b0e41b06-9ffe-4098-bb0b-419c8ee4d6bc)
 
 <br>
 
